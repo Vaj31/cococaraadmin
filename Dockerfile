@@ -46,8 +46,11 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy build output from the builder stage
 COPY --from=builder /app/build/web /usr/share/nginx/html
 
-# Copy custom Nginx configuration for client-side routing fallback
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy custom Nginx configuration template for client-side routing fallback
+COPY nginx.conf.template /etc/nginx/templates/default.conf.template
+
+# Restrict envsubst to only substitute $PORT (leaving Nginx variables like $uri intact)
+ENV NGINX_ENVSUBST_FILTER="PORT"
 
 EXPOSE 80
 
