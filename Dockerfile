@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone the Flutter stable channel repository (shallow clone for faster builds)
-RUN git clone --depth 1 --branch stable https://github.com/flutter/flutter.git /usr/local/flutter
+RUN git clone --depth 1 --branch 3.41.7 https://github.com/flutter/flutter.git /usr/local/flutter
 
 # Add flutter to path
 ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
