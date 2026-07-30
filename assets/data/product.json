@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1001,
+    "name": "Bag",
+    "category_id": 1,
+    "price": 642.99,
+    "image": "assets/images/products/bag/bag_1.jpg",
+    "stock": 20,
+    "rating": 1.3
+  },
+  {
+    "id": 1002,
+    "name": "Black Shoes",
+    "category_id": 2,
+    "price": 463.99,
+    "image": "assets/images/products/black_shoes/black_shoes_1.jpg",
+    "stock": 50,
+    "rating": 5
+  },
+  {
+    "id": 1003,
+    "name": "Camera",
+    "category_id": 3,
+    "price": 1267.99,
+    "image": "assets/images/products/camera/camera_1.jpg",
+    "stock": 30,
+    "rating": 4.5
+  },
+  {
+    "id": 1004,
+    "name": "Face Cream",
+    "category_id": 4,
+    "price": 1560.99,
+    "image": "assets/images/products/face_cream/cream_1.jpg",
+    "stock": 100,
+    "rating": 1.6
+  },
+  {
+    "id": 1005,
+    "name": "Girl Sandal",
+    "category_id": 5,
+    "price": 890.99,
+    "image": "assets/images/products/girl_sandal/sandal_1.jpg",
+    "stock": 15,
+    "rating": 4.3
+  },
+  {
+    "id": 1006,
+    "name": "Headphone",
+    "category_id": 6,
+    "price": 248.99,
+    "image": "assets/images/products/headphone/headphone_1.jpg",
+    "stock": 40,
+    "rating": 1.6
+  },
+  {
+    "id": 1007,
+    "name": "Laptop",
+    "category_id": 7,
+    "price": 647.99,
+    "image": "assets/images/products/laptop/laptop_1.jpg",
+    "stock": 25,
+    "rating": 1.4
+  },
+  {
+    "id": 1008,
+    "name": "Perfume",
+    "category_id": 8,
+    "price": 1228.99,
+    "image": "assets/images/products/perfume/perfume_1.jpg",
+    "stock": 10,
+    "rating": 1.7
+  },
+  {
+    "id": 1009,
+    "name": "Smart Watch",
+    "category_id": 9,
+    "price": 1222.99,
+    "image": "assets/images/products/smart_watch/smart_watch_1.jpg",
+    "stock": 35,
+    "rating": 1.6
+  },
+  {
+    "id": 1010,
+    "name": "Watch",
+    "category_id": 10,
+    "price": 1224.99,
+    "image": "assets/images/products/watch/watch_1.jpg",
+    "stock": 18,
+    "rating": 2.3
+  },
+  {
+    "id": 1011,
+    "name": "Bag",
+    "category_id": 1,
+    "price": 1152.99,
+    "image": "assets/images/products/bag/bag_2.jpg",
+    "stock": 20,
+    "rating": 3.0
+  },
+  {
+    "id": 1012,
+    "name": "Black Shoes",
+    "category_id": 2,
+    "price": 1014.99,
+    "image": "assets/images/products/black_shoes/black_shoes_2.jpg",
+    "stock": 50,
+    "rating": 1.4
+  },
+  {
+    "id": 1013,
+    "name": "Camera",
+    "category_id": 3,
+    "price": 1250.99,
+    "image": "assets/images/products/camera/camera_2.jpg",
+    "stock": 30,
+    "rating": 1.4
+  },
+  {
+    "id": 1014,
+    "name": "Face Cream",
+    "category_id": 4,
+    "price": 346.99,
+    "image": "assets/images/products/face_cream/cream_2.jpg",
+    "stock": 100,
+    "rating": 2.7
+  },
+  {
+    "id": 1015,
+    "name": "Girl Sandal",
+    "category_id": 5,
+    "price": 517.99,
+    "image": "assets/images/products/girl_sandal/sandal_2.jpg",
+    "stock": 15,
+    "rating": 1.3
+  },
+  {
+    "id": 1016,
+    "name": "Headphone",
+    "category_id": 6,
+    "price": 709.99,
+    "image": "assets/images/products/headphone/headphone_2.jpg",
+    "stock": 40,
+    "rating": 4.4
+  },
+  {
+    "id": 1017,
+    "name": "Laptop",
+    "category_id": 7,
+    "price": 1273.99,
+    "image": "assets/images/products/laptop/laptop_2.jpg",
+    "stock": 25,
+    "rating": 4.4
+  },
+  {
+    "id": 1018,
+    "name": "Perfume",
+    "category_id": 8,
+    "price": 407.99,
+    "image": "assets/images/products/perfume/perfume_2.jpg",
+    "stock": 10,
+    "rating": 4.5
+  },
+  {
+    "id": 1019,
+    "name": "Smart Watch",
+    "category_id": 9,
+    "price": 559.99,
+    "image": "assets/images/products/smart_watch/smart_watch_2.jpg",
+    "stock": 35,
+    "rating": 4.5
+  },
+  {
+    "id": 1020,
+    "name": "Watch",
+    "category_id": 10,
+    "price": 10759,
+    "image": "assets/images/products/watch/watch_2.jpg",
+    "stock": 18,
+    "rating": 1.2
+  },
+  {
+    "id": 1021,
+    "name": "Bag",
+    "category_id": 1,
+    "price": 630.99,
+    "image": "assets/images/products/bag/bag_3.jpg",
+    "stock": 20,
+    "rating": 3.9
+  },
+  {
+    "id": 1022,
+    "name": "Black Shoes",
+    "category_id": 2,
+    "price": 1039.99,
+    "image": "assets/images/products/black_shoes/black_shoes_3.jpg",
+    "stock": 50,
+    "rating": 3.4
+  },
+  {
+    "id": 1023,
+    "name": "Camera",
+    "category_id": 3,
+    "price": 983.99,
+    "image": "assets/images/products/camera/camera_3.jpg",
+    "stock": 30,
+    "rating": 1.8
+  },
+  {
+    "id": 1024,
+    "name": "Face Cream",
+    "category_id": 4,
+    "price": 464.99,
+    "image": "assets/images/products/face_cream/cream_3.jpg",
+    "stock": 100,
+    "rating": 2.5
+  },
+  {
+    "id": 1025,
+    "name": "Girl Sandal",
+    "category_id": 5,
+    "price": 1362.99,
+    "image": "assets/images/products/girl_sandal/sandal_3.jpg",
+    "stock": 15,
+    "rating": 3.1
+  },
+  {
+    "id": 1026,
+    "name": "Headphone",
+    "category_id": 6,
+    "price": 917.99,
+    "image": "assets/images/products/headphone/headphone_3.jpg",
+    "stock": 40,
+    "rating": 1.2
+  },
+  {
+    "id": 1027,
+    "name": "Laptop",
+    "category_id": 7,
+    "price": 224.99,
+    "image": "assets/images/products/laptop/laptop_3.jpg",
+    "stock": 25,
+    "rating": 4.2
+  },
+  {
+    "id": 1028,
+    "name": "Perfume",
+    "category_id": 8,
+    "price": 646.99,
+    "image": "assets/images/products/perfume/perfume_3.jpg",
+    "stock": 10,
+    "rating": 2.9
+  },
+  {
+    "id": 1029,
+    "name": "Smart Watch",
+    "category_id": 9,
+    "price": 730.99,
+    "image": "assets/images/products/smart_watch/smart_watch_3.jpg",
+    "stock": 35,
+    "rating": 2.6
+  },
+  {
+    "id": 1030,
+    "name": "Watch",
+    "category_id": 10,
+    "price": 1473.99,
+    "image": "assets/images/products/watch/watch_3.jpg",
+    "stock": 18,
+    "rating": 2.7
+  },
+  {
+    "id": 1031,
+    "name": "Bag",
+    "category_id": 1,
+    "price": 1119.99,
+    "image": "assets/images/products/bag/bag_4.jpg",
+    "stock": 20,
+    "rating": 2.8
+  },
+  {
+    "id": 1032,
+    "name": "Black Shoes",
+    "category_id": 2,
+    "price": 4559,
+    "image": "assets/images/products/black_shoes/black_shoes_4.jpg",
+    "stock": 50,
+    "rating": 4.1
+  },
+  {
+    "id": 1033,
+    "name": "Camera",
+    "category_id": 3,
+    "price": 3459,
+    "image": "assets/images/products/camera/camera_4.jpg",
+    "stock": 30,
+    "rating": 1.4
+  },
+  {
+    "id": 1034,
+    "name": "Face Cream",
+    "category_id": 4,
+    "price": 1124.99,
+    "image": "assets/images/products/face_cream/cream_4.jpg",
+    "stock": 100,
+    "rating": 3.0
+  },
+  {
+    "id": 1035,
+    "name": "Girl Sandal",
+    "category_id": 5,
+    "price": 1088.99,
+    "image": "assets/images/products/girl_sandal/sandal_4.jpg",
+    "stock": 15,
+    "rating": 3.6
+  },
+  {
+    "id": 1036,
+    "name": "Headphone",
+    "category_id": 6,
+    "price": 1394.99,
+    "image": "assets/images/products/headphone/headphone_4.jpg",
+    "stock": 40,
+    "rating": 1.8
+  },
+  {
+    "id": 1037,
+    "name": "Laptop",
+    "category_id": 7,
+    "price": 964.99,
+    "image": "assets/images/products/laptop/laptop_4.jpg",
+    "stock": 25,
+    "rating": 2.0
+  },
+  {
+    "id": 1038,
+    "name": "Perfume",
+    "category_id": 8,
+    "price": 1306.99,
+    "image": "assets/images/products/perfume/perfume_4.jpg",
+    "stock": 10,
+    "rating": 2.4
+  },
+  {
+    "id": 1039,
+    "name": "Smart Watch",
+    "category_id": 9,
+    "price": 599.99,
+    "image": "assets/images/products/smart_watch/smart_watch_4.jpg",
+    "stock": 35,
+    "rating": 4.4
+  },
+  {
+    "id": 1040,
+    "name": "Watch",
+    "category_id": 10,
+    "price": 3059,
+    "image": "assets/images/products/watch/watch_4.jpg",
+    "stock": 18,
+    "rating": 3.8
+  },
+  {
+    "id": 1041,
+    "name": "Bag",
+    "category_id": 1,
+    "price": 228.99,
+    "image": "assets/images/products/bag/bag_5.jpg",
+    "stock": 20,
+    "rating": 4.8
+  },
+  {
+    "id": 1042,
+    "name": "Black Shoes",
+    "category_id": 2,
+    "price": 270.99,
+    "image": "assets/images/products/black_shoes/black_shoes_5.jpg",
+    "stock": 50,
+    "rating": 1.4
+  },
+  {
+    "id": 1043,
+    "name": "Camera",
+    "category_id": 3,
+    "price": 1386.99,
+    "image": "assets/images/products/camera/camera_5.jpg",
+    "stock": 30,
+    "rating": 4.1
+  },
+  {
+    "id": 1044,
+    "name": "Face Cream",
+    "category_id": 4,
+    "price": 1554.99,
+    "image": "assets/images/products/face_cream/cream_5.jpg",
+    "stock": 100,
+    "rating": 2.3
+  },
+  {
+    "id": 1045,
+    "name": "Girl Sandal",
+    "category_id": 5,
+    "price": 977.99,
+    "image": "assets/images/products/girl_sandal/sandal_5.jpg",
+    "stock": 15,
+    "rating": 1.3
+  },
+  {
+    "id": 1046,
+    "name": "Headphone",
+    "category_id": 6,
+    "price": 616.99,
+    "image": "assets/images/products/headphone/headphone_5.jpg",
+    "stock": 40,
+    "rating": 5
+  },
+  {
+    "id": 1047,
+    "name": "Laptop",
+    "category_id": 7,
+    "price": 446.99,
+    "image": "assets/images/products/laptop/laptop_5.jpg",
+    "stock": 25,
+    "rating": 2.0
+  },
+  {
+    "id": 1048,
+    "name": "Perfume",
+    "category_id": 8,
+    "price": 464.99,
+    "image": "assets/images/products/perfume/perfume_5.jpg",
+    "stock": 10,
+    "rating": 1.8
+  },
+  {
+    "id": 1049,
+    "name": "Smart Watch",
+    "category_id": 9,
+    "price": 1559.99,
+    "image": "assets/images/products/smart_watch/smart_watch_5.jpg",
+    "stock": 35,
+    "rating": 3.8
+  },
+  {
+    "id": 1050,
+    "name": "Watch",
+    "category_id": 10,
+    "price": 764.99,
+    "image": "assets/images/products/watch/watch_5.jpg",
+    "stock": 18,
+    "rating": 4.3
+  }
+]

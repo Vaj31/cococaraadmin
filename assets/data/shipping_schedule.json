@@ -1,0 +1,54 @@
+[
+    {
+        "shippingId": "JP-40TYO-C073", "containerType": "20ft Standard", "pod": "TYO",
+        "orders": [
+            {"supplier": "TSC", "orderId": "JP2411DLM001", "itemCode": "GBS-L-CP2-100x20x12", "qty": "500", "qtyPlt": "50", "kg": "200"},
+            {"supplier": "DCC", "orderId": "JP2411IKD010-1", "itemCode": "GBT-H-C80-40x18x14", "qty": "300", "qtyPlt": "30", "kg": "150"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C074", "containerType": "40ft High Cube", "pod": "TYO",
+        "orders": [
+            {"supplier": "ABI", "orderId": "JP2412TMJ020", "itemCode": "BRQ-L-CP2-20x10x5", "qty": "1000", "qtyPlt": "40", "kg": "800"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C075", "containerType": "20ft Reefer", "pod": "TYO",
+        "orders": [
+            {"supplier": "CCPL", "orderId": "JP2412TMJ021", "itemCode": "FSS-L-CP2-50x15x5", "qty": "200", "qtyPlt": "20", "kg": "100"},
+            {"supplier": "ABI", "orderId": "JP2412TMJ022", "itemCode": "FSS-L-CP2-50x15x5", "qty": "400", "qtyPlt": "40", "kg": "200"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C076", "containerType": "40ft Standard", "pod": "TYO",
+        "orders": [
+            {"supplier": "CCPL", "orderId": "JP2412TMJ023", "itemCode": "GBT-S-CP2-100x16x15", "qty": "600", "qtyPlt": "60", "kg": "300"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C077", "containerType": "20ft Open Top", "pod": "TYO",
+        "orders": [
+            {"supplier": "ABI", "orderId": "JP2502AAC001", "itemCode": "CCN-L-SP5-10x10x6", "qty": "150", "qtyPlt": "15", "kg": "75"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C078", "containerType": "40ft Flat Rack", "pod": "TYO",
+        "orders": [
+            {"supplier": "TSC", "orderId": "JP2412TMJ024", "itemCode": "GBT-H-XXX-60x15x10", "qty": "800", "qtyPlt": "80", "kg": "400"},
+            {"supplier": "DCC", "orderId": "JP2412TMJ025", "itemCode": "GBT-H-XXX-60x15x10", "qty": "250", "qtyPlt": "25", "kg": "125"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C079", "containerType": "20ft Standard", "pod": "TYO",
+        "orders": [
+            {"supplier": "TSC", "orderId": "JP2412TMJ026", "itemCode": "GBT-H-XXX-60x15x10", "qty": "350", "qtyPlt": "35", "kg": "175"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C080", "containerType": "40ft High Cube", "pod": "TYO",
+        "orders": [
+            {"supplier": "ABI", "orderId": "JP2412TMJ027", "itemCode": "GBT-H-CP4-100x15x10", "qty": "900", "qtyPlt": "90", "kg": "450"},
+            {"supplier": "GKC", "orderId": "JP2412TMJ028", "itemCode": "GBT-H-CP4-100x15x10", "qty": "100", "qtyPlt": "10", "kg": "50"}
+        ]
+    }
+]

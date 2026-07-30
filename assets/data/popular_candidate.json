@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Nicholas Bell",
+    "userId": "@nicholas"
+  },
+  {
+    "id": 2,
+    "name": "Audrey Hughes",
+    "userId": "@audrey"
+  },
+  {
+    "id": 3,
+    "name": "Jack Mathis",
+    "userId": "@jack"
+  },
+  {
+    "id": 4,
+    "name": "Lillian Walker",
+    "userId": "@lillian"
+  },
+  {
+    "id": 5,
+    "name": "Joanne Lewis",
+    "userId": "@joanne"
+  },
+  {
+    "id": 6,
+    "name": "Amanda Turner",
+    "userId": "@amanda"
+  },
+  {
+    "id": 7,
+    "name": "Claire Watson",
+    "userId": "@claire"
+  },
+  {
+    "id": 8,
+    "name": "Warren Peters",
+    "userId": "@warren"
+  },
+  {
+    "id": 9,
+    "name": "Evan White",
+    "userId": "@evan"
+  },
+  {
+    "id": 10,
+    "name": "Benjamin Manning",
+    "userId": "@benjamin"
+  }
+]

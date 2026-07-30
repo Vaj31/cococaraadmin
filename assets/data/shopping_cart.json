@@ -1,0 +1,62 @@
+[
+  {
+    "product": {
+      "name": "Spaghetti Carbonara",
+      "image": "assets/images/food/food_1.jpg",
+      "description": "A classic Italian dish made with eggs, cheese, pancetta, and pepper. Rich, creamy, and comforting.",
+      "rating": 4.8,
+      "review": 200,
+      "price": 18.5,
+      "color": "#F5E1A4",
+      "quantity": 15
+    },
+    "selectedSize": "Large",
+    "quantity": 2,
+    "selectedColor": "#F5E1A4"
+  },
+  {
+    "product": {
+      "name": "Caesar Salad",
+      "image": "assets/images/food/food_2.jpg",
+      "description": "Crisp romaine lettuce, creamy Caesar dressing, croutons, and freshly grated Parmesan cheese.",
+      "rating": 4.6,
+      "review": 180,
+      "price": 12.0,
+      "color": "#D4E157",
+      "quantity": 10
+    },
+    "selectedSize": "Medium",
+    "quantity": 1,
+    "selectedColor": "#D4E157"
+  },
+  {
+    "product": {
+      "name": "Margherita Pizza",
+      "image": "assets/images/food/food_3.jpg",
+      "description": "Classic pizza topped with fresh tomatoes, mozzarella cheese, and basil leaves. A taste of Italy in every bite.",
+      "rating": 4.7,
+      "review": 250,
+      "price": 15.0,
+      "color": "#FF6F61",
+      "quantity": 20
+    },
+    "selectedSize": "Medium",
+    "quantity": 1,
+    "selectedColor": "#FF6F61"
+  },
+  {
+    "product": {
+      "name": "Chocolate Lava Cake",
+      "image": "assets/images/food/food_4.jpg",
+      "description": "Decadent chocolate cake with a molten center. Served warm with a scoop of vanilla ice cream.",
+      "rating": 4.9,
+      "review": 220,
+      "price": 8.5,
+      "color": "#4E342E",
+      "quantity": 25
+    },
+    "selectedSize": "Single",
+    "quantity": 3,
+    "selectedColor": "#4E342E"
+  }
+]

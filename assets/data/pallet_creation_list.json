@@ -1,0 +1,54 @@
+[
+    {
+        "shippingId": "JP-40TYO-C032",
+        "items": [
+            {"itemCode": "GBT-H-CP4-90x15x10", "supplier": "TSC", "palletId": "PLT-1001"},
+            {"itemCode": "GBT-H-C80-40x18x14", "supplier": "ABI", "palletId": "PLT-1002"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C033",
+        "items": [
+            {"itemCode": "FSS-L-Y40-100x20x9", "supplier": "DCC", "palletId": "PLT-2001"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C034",
+        "items": [
+            {"itemCode": "FSS-L-YXX-100x20x9", "supplier": "TSC", "palletId": "PLT-3001"},
+            {"itemCode": "FSS-L-YXX-100x20x9", "supplier": "DCC", "palletId": "PLT-3002"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C044",
+        "items": [
+            {"itemCode": "GBT-H-CP4-100x15x15", "supplier": "CCPL", "palletId": "PLT-4001"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C055",
+        "items": [
+            {"itemCode": "GBT-H-CP4-100x15x15", "supplier": "CCPL", "palletId": "PLT-5001"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C066",
+        "items": [
+            {"itemCode": "GBT-H-CP4-100x15x15", "supplier": "GKC", "palletId": "PLT-6001"},
+            {"itemCode": "GBT-H-CP4-100x15x15", "supplier": "ABI", "palletId": "PLT-6002"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C077",
+        "items": [
+            {"itemCode": "GBT-H-CP4-100x15x15", "supplier": "DCC-1", "palletId": "PLT-7001"}
+        ]
+    },
+    {
+        "shippingId": "JP-40TYO-C088",
+        "items": [
+            {"itemCode": "CCN-L-SP5-10x10x5", "supplier": "DCC", "palletId": "PLT-8001"},
+            {"itemCode": "CCS-L-SP5-8×8×4", "supplier": "DCC-1", "palletId": "PLT-8002"}
+        ]
+    }
+]

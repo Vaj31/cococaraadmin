@@ -1,0 +1,10 @@
+[
+    {"orderId": "JP2511VGD002-1", "date": "2023-10-01", "shipId": "JP-40TYO-C073", "itemCode": "GBT-H-CP4-100x15x15", "orderQty": "500", "compQty": "300", "pendQty": "200"},
+    {"orderId": "JP2512TEC008", "date": "2023-10-05", "shipId": "JP-20TYO-C072", "itemCode": "GBT-H-CP1-100x18x16", "orderQty": "1000", "compQty": "1000", "pendQty": "0"},
+    {"orderId": "JP2512IKD019-5", "date": "2023-10-10", "shipId": "JP-20TYO-C074", "itemCode": "FSS-L-CP2-100x20x15", "orderQty": "200", "compQty": "50", "pendQty": "150"},
+    {"orderId": "JP2512SHS017", "date": "2023-10-12", "shipId": "JP-20TYO-C075", "itemCode": "GBT-H-X30-100x15x15", "orderQty": "750", "compQty": "0", "pendQty": "750"},
+    {"orderId": "JP2512SHS018", "date": "2023-10-15", "shipId": "JP-40TYO-C076", "itemCode": "FSS-L-CP2-50x15x5", "orderQty": "600", "compQty": "100", "pendQty": "500"},
+    {"orderId": "JP2512SHS019", "date": "2023-10-18", "shipId": "JP-20TYO-C077", "itemCode": "CCS-L-SP5-8×8×4", "orderQty": "300", "compQty": "300", "pendQty": "0"},
+    {"orderId": "JP2512SHS020", "date": "2023-10-20", "shipId": "JP-40TYO-C078", "itemCode": "CCN-L-SP5-10x10x5", "orderQty": "450", "compQty": "200", "pendQty": "250"},
+    {"orderId": "JP2512SHS021", "date": "2023-10-22", "shipId": "JP-20TYO-C079", "itemCode": "GBT-H-X50-60x15x12", "orderQty": "800", "compQty": "400", "pendQty": "400"}
+]

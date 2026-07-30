@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "image": "assets/images/dummy/drink-1.jpg",
+    "food_name": "Lemonade",
+    "customer_name": "Sophie",
+    "address": "Penthouse Suite",
+    "price": 99.0
+  },
+  {
+    "id": 2,
+    "image": "assets/images/dummy/food-1.jpg",
+    "food_name": "Spaghetti Carbonate",
+    "customer_name": "Marco",
+    "address": "Apt 2301",
+    "price": 90,
+    "isPending": false
+  },
+  {
+    "id": 3,
+    "image": "assets/images/dummy/other-1.jpg",
+    "food_name": "Cheese Platter",
+    "customer_name": "Emma",
+    "address": "12th Floor",
+    "price": 99,
+    "isPending": true
+  },
+  {
+    "id": 4,
+    "image": "assets/images/dummy/drink-2.jpg",
+    "food_name": "Mocha Coffee",
+    "customer_name": "David",
+    "address": "3rd Floor",
+    "price": 50,
+    "isPending": true
+  },
+  {
+    "id": 5,
+    "image": "assets/images/dummy/food-2.jpg",
+    "food_name": "Caesar Salad",
+    "customer_name": "Olivia",
+    "address": "PO Box 2024",
+    "price": 50,
+    "isPending": false
+  },
+  {
+    "id": 6,
+    "image": "assets/images/dummy/other-2.jpg",
+    "food_name": "Chocolate Cake",
+    "customer_name": "Ava",
+    "address": "Apt 3456",
+    "price": 99,
+    "isPending": true
+  }
+]

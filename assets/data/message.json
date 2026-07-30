@@ -1,0 +1,197 @@
+[
+  {
+    "first_name": "Brendan Canto",
+    "email": "brendan@gmail.com",
+    "messages": [
+      {
+        "message": "How are you today?",
+        "send_at": "2024-02-11T22:20:54Z",
+        "from_me": false
+      },
+      {
+        "message": "Hey! a reminder for tomorrow's meeting",
+        "send_at": "2023-05-14T18:46:50Z",
+        "from_me": true
+      },
+      {
+        "message": "Lets have meeting today between me, you and tony",
+        "send_at": "2023-05-21T20:51:57Z",
+        "from_me": false
+      },
+      {
+        "message": "Yeah everything is fine. Our next meeting tomorrow at 10.00 AM",
+        "send_at": "2023-05-05T03:19:16Z",
+        "from_me": false
+      }
+    ]
+  },
+  {
+    "first_name": "Olivia Smith",
+    "email": "olivia@gmail.com",
+    "messages": [
+      {
+        "message": "Are we going to have this week's planing meeting today?",
+        "send_at": "2023-04-25T23:34:51Z",
+        "from_me": false
+      },
+      {
+        "message": "Please check these design assets",
+        "send_at": "2023-11-21T20:00:30Z",
+        "from_me": true
+      },
+      {
+        "message": "Good morning, How are you? What about our next meeting?",
+        "send_at": "2023-05-27T00:16:35Z",
+        "from_me": true
+      }
+    ]
+  },
+  {
+    "first_name": "Liam Johnson",
+    "email": "liam@gmail.com",
+    "messages": [
+      {
+        "message": "Are you free for 15 min? I would like to discuss something",
+        "send_at": "2023-12-18T05:44:22Z",
+        "from_me": false
+      },
+      {
+        "message": "Lets have meeting today between me, you and tony",
+        "send_at": "2023-04-24T09:40:57Z",
+        "from_me": true
+      }
+    ]
+  },
+  {
+    "first_name": "Mia Brown",
+    "email": "mia@gmail.com",
+    "messages": [
+      {
+        "message": "Lets have meeting today between me, you and tony",
+        "send_at": "2023-05-01T05:59:30Z",
+        "from_me": false
+      },
+      {
+        "message": "Enumeration attenuation Durand var. avi-um Reveal & Shocker",
+        "send_at": "2023-06-14T15:29:52Z",
+        "from_me": true
+      },
+      {
+        "message": "Hey, I'm going to meet a friend of mine at the department store. I have to buy some presents for my parents \uD83C\uDF81.",
+        "send_at": "2024-02-14T01:55:57Z",
+        "from_me": true
+      }
+    ]
+  },
+  {
+    "first_name": "Noah Davis",
+    "email": "noahdavis@gmail.com",
+    "messages": [
+      {
+        "message": "Are you interesting in learning",
+        "send_at": "2023-07-20T12:51:19Z",
+        "from_me": false
+      },
+      {
+        "message": "Are we going to have this week's planing meeting today?",
+        "send_at": "2023-11-21T03:58:23Z",
+        "from_me": false
+      },
+      {
+        "message": "Trillium decilumens Harrison",
+        "send_at": "2024-01-01T11:04:58Z",
+        "from_me": true
+      }
+    ]
+  },
+  {
+    "first_name": "Sophia Garcia",
+    "email": "sophia@gmail.com",
+    "messages": [
+      {
+        "message": "Are you free for 15 min? I would like to discuss something",
+        "send_at": "2023-08-01T18:53:19Z",
+        "from_me": false
+      },
+      {
+        "message": "Acacia stigmatising (Mill.) Kubuntu",
+        "send_at": "2023-09-15T13:44:12Z",
+        "from_me": true
+      }
+    ]
+  },
+  {
+    "first_name": "Lucas Rodriguez",
+    "email": "lucas@gmail.com",
+    "messages": [
+      {
+        "message": "Lets have meeting today between me, you and tony",
+        "send_at": "2024-01-04T13:07:46Z",
+        "from_me": false
+      },
+      {
+        "message": "Enumeration attenuation Durand var. avi-um Reveal & Shocker",
+        "send_at": "2024-01-10T15:04:45Z",
+        "from_me": true
+      }
+    ]
+  },
+  {
+    "first_name": "Ava Martinez",
+    "email": "avamartinez@gmail.com",
+    "messages": [
+      {
+        "message": "Howdy?",
+        "send_at": "2023-07-17T19:31:47Z",
+        "from_me": false
+      },
+      {
+        "message": "Gynecology glassily Beth. ssp. glassily",
+        "send_at": "2023-08-22T17:10:16Z",
+        "from_me": true
+      },
+      {
+        "message": "Acacia stigmatising (Mill.) Kubuntu",
+        "send_at": "2023-09-20T04:44:26Z",
+        "from_me": true
+      }
+    ]
+  },
+  {
+    "first_name": "Matthew Taylor",
+    "email": "matthew@gmail.com",
+    "messages": [
+      {
+        "message": "Please Check this design",
+        "send_at": "2023-08-31T13:30:18Z",
+        "from_me": false
+      },
+      {
+        "message": "Uhlenbeck axillary (Hook. f.) Walk.",
+        "send_at": "2024-02-25T18:37:02Z",
+        "from_me": true
+      }
+    ]
+  },
+  {
+    "first_name": "Emily Wilson",
+    "email": "emily@gmail.com",
+    "messages": [
+      {
+        "message": "Hi, How are you? What about our next meeting?",
+        "send_at": "2023-07-13T20:51:35Z",
+        "from_me": false
+      },
+      {
+        "message": "Capsular Bystander",
+        "send_at": "2023-12-23T18:36:17Z",
+        "from_me": true
+      },
+      {
+        "message": "Please Check this design",
+        "send_at": "2023-12-13T11:18:57Z",
+        "from_me": false
+      }
+    ]
+  }
+]

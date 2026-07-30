@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Bag"
+  },
+  {
+    "id": 2,
+    "name": "Black Shoes"
+  },
+  {
+    "id": 3,
+    "name": "Camera"
+  },
+  {
+    "id": 4,
+    "name": "Face Cream"
+  },
+  {
+    "id": 5,
+    "name": "Girl Sandal"
+  },
+  {
+    "id": 6,
+    "name": "Headphone"
+  },
+  {
+    "id": 7,
+    "name": "Laptop"
+  },
+  {
+    "id": 8,
+    "name": "Perfume"
+  },
+  {
+    "id": 9,
+    "name": "Smart Watch"
+  },
+  {
+    "id": 10,
+    "name": "Watch"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Spaghetti Carbonara",
+    "image": "assets/images/food/food_1.jpg",
+    "description": "A classic Italian dish made with eggs, cheese, pancetta, and pepper. Rich, creamy, and comforting.",
+    "rating": 4.8,
+    "review": 200,
+    "price": 18.5,
+    "color": "#F5E1A4",
+    "quantity": 15,
+    "favorite": true
+  },
+  {
+    "name": "Caesar Salad",
+    "image": "assets/images/food/food_2.jpg",
+    "description": "Crisp romaine lettuce, creamy Caesar dressing, croutons, and freshly grated Parmesan cheese.",
+    "rating": 4.6,
+    "review": 180,
+    "price": 12.0,
+    "color": "#D4E157",
+    "quantity": 10,
+    "favorite": false
+  },
+  {
+    "name": "Margherita Pizza",
+    "image": "assets/images/food/food_3.jpg",
+    "description": "Classic pizza topped with fresh tomatoes, mozzarella cheese, and basil leaves. A taste of Italy in every bite.",
+    "rating": 4.7,
+    "review": 250,
+    "price": 15.0,
+    "color": "#FF6F61",
+    "quantity": 20,
+    "favorite": true
+  },
+  {
+    "name": "Chocolate Lava Cake",
+    "image": "assets/images/food/food_4.jpg",
+    "description": "Decadent chocolate cake with a molten center. Served warm with a scoop of vanilla ice cream.",
+    "rating": 4.9,
+    "review": 220,
+    "price": 8.5,
+    "color": "#4E342E",
+    "quantity": 25,
+    "favorite": true
+  },
+  {
+    "name": "Chicken Alfredo",
+    "image": "assets/images/food/food_5.jpg",
+    "description": "Creamy Alfredo sauce with tender pieces of chicken over fettuccine pasta. A rich and satisfying meal.",
+    "rating": 4.4,
+    "review": 190,
+    "price": 16.0,
+    "color": "#F3D4C2",
+    "quantity": 12,
+    "favorite": false
+  },
+  {
+    "name": "Greek Yogurt Parfait",
+    "image": "assets/images/food/food_6.jpg",
+    "description": "Layers of Greek yogurt, honey, and fresh berries topped with granola. A healthy and delicious breakfast option.",
+    "rating": 4.2,
+    "review": 150,
+    "price": 9.0,
+    "color": "#FCE4EC",
+    "quantity": 18,
+    "favorite": false
+  },
+  {
+    "name": "Beef Stroganoff",
+    "image": "assets/images/food/food_7.jpg",
+    "description": "Tender beef strips cooked in a rich, creamy mushroom sauce served over egg noodles.",
+    "rating": 4.3,
+    "review": 170,
+    "price": 17.5,
+    "color": "#D9B7A1",
+    "quantity": 8,
+    "favorite": true
+  },
+  {
+    "name": "Vegetable Stir Fry",
+    "image": "assets/images/food/food_8.jpg",
+    "description": "A colorful mix of fresh vegetables stir-fried with a savory sauce. Perfect for a quick and healthy meal.",
+    "rating": 4.1,
+    "review": 160,
+    "price": 11.0,
+    "color": "#B9FBC0",
+    "quantity": 14,
+    "favorite": false
+  },
+  {
+    "name": "BBQ Ribs",
+    "image": "assets/images/food/food_9.jpg",
+    "description": "Tender ribs glazed with a smoky BBQ sauce and slow-cooked to perfection.",
+    "rating": 4.7,
+    "review": 210,
+    "price": 22.0,
+    "color": "#BF5B5B",
+    "quantity": 10,
+    "favorite": true
+  },
+  {
+    "name": "Fruit Smoothie",
+    "image": "assets/images/food/food_10.jpg",
+    "description": "A refreshing blend of seasonal fruits and yogurt. Great for a quick, nutritious snack.",
+    "rating": 4.3,
+    "review": 140,
+    "price": 7.0,
+    "color": "#FFC3A0",
+    "quantity": 20,
+    "favorite": false
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "job_title": "Marketing Assistant",
+    "job_hr": 4,
+    "price": 738,
+    "job_location": "Koncang",
+    "job_work": [
+      "Project Work"
+    ]
+  },
+  {
+    "id": 2,
+    "job_title": "Pharmacist",
+    "job_hr": 5,
+    "price": 478,
+    "job_location": "Panan",
+    "job_work": [
+      "Project Work",
+      "Middle Level"
+    ]
+  },
+  {
+    "id": 3,
+    "job_title": "Senior Editor",
+    "job_hr": 7,
+    "price": 739,
+    "job_location": "Neos Voutzás",
+    "job_work": [
+      "Project Work",
+      "Shift Work"
+    ]
+  },
+  {
+    "id": 4,
+    "job_title": "Analyst Programmer",
+    "job_hr": 7,
+    "price": 236,
+    "job_location": "Castro Barros",
+    "job_work": [
+    ]
+  },
+  {
+    "id": 5,
+    "job_title": "Junior Executive",
+    "job_hr": 7,
+    "price": 285,
+    "job_location": "Sembabule",
+    "job_work": [
+      "Project Work",
+      "Middle Level"
+    ]
+  },
+  {
+    "id": 6,
+    "job_title": "Internal Auditor",
+    "job_hr": 7,
+    "price": 891,
+    "job_location": "Tala",
+    "job_work": [
+      "Project Work",
+      "Shift Work"
+    ]
+  },
+  {
+    "id": 7,
+    "job_title": "Nurse Practitioner",
+    "job_hr": 1,
+    "price": 573,
+    "job_location": "Koceljeva",
+    "job_work": [
+      "Shift Work",
+      "Middle Level"
+    ]
+  },
+  {
+    "id": 8,
+    "job_title": "Community Outreach Specialist",
+    "job_hr": 10,
+    "price": 975,
+    "job_location": "Dolati",
+    "job_work": [
+      "Middle Level"
+    ]
+  },
+  {
+    "id": 9,
+    "job_title": "Internal Auditor",
+    "job_hr": 5,
+    "price": 140,
+    "job_location": "Yaguachi Nuevo",
+    "job_work": [
+      "Project Work",
+      "Shift Work",
+      "Middle Level"
+    ]
+  },
+  {
+    "id": 10,
+    "job_title": "Account Representative III",
+    "job_hr": 1,
+    "price": 524,
+    "job_location": "Kota Kinabalu",
+    "job_work": [
+      "Project Work",
+      "Shift Work",
+      "Middle Level"
+    ]
+  }
+]
