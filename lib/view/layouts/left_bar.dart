@@ -179,6 +179,19 @@ class _LeftBarState extends State<LeftBar>
                       isCondensed: isCondensed,
                       route: '/processing/production_report',
                     ),
+                    labelWidget("downloads".tr()),
+                    NavigationItem(
+                      iconData: LucideIcons.upload,
+                      title: "Upload doc",
+                      isCondensed: isCondensed,
+                      route: '/downloads/upload_doc',
+                    ),
+                    NavigationItem(
+                      iconData: LucideIcons.download,
+                      title: "Download doc",
+                      isCondensed: isCondensed,
+                      route: '/downloads/download_doc',
+                    ),
                     NavigationItem(
                       iconData: LucideIcons.log_out,
                       title: "Log out",
@@ -190,7 +203,7 @@ class _LeftBarState extends State<LeftBar>
                       },
                     ),
                     MySpacing.height(20),
-                    
+
                     if (isCondensed)
                       InkWell(
                         onTap: () {
