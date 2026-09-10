@@ -91,9 +91,7 @@ class _GoogleSyncScreenState extends State<GoogleSyncScreen> with SingleTickerPr
         });
 
         if (_poDiffs.isEmpty && _shippingDiffs.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: MyText.bodyMedium("Everything is up to date!", color: contentTheme.onPrimary), backgroundColor: contentTheme.success),
-          );
+          Utils.showInfoToast("Everything is up to date!", context: context);
         }
       }
     } catch (e) {
@@ -149,9 +147,7 @@ class _GoogleSyncScreenState extends State<GoogleSyncScreen> with SingleTickerPr
       });
 
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: MyText.bodyMedium("Sync applied successfully!", color: contentTheme.onPrimary), backgroundColor: contentTheme.success),
-        );
+        Utils.showSuccessToast("Sync applied successfully!", context: context);
         setState(() {
           _poDiffs.clear();
           _shippingDiffs.clear();
@@ -182,9 +178,7 @@ class _GoogleSyncScreenState extends State<GoogleSyncScreen> with SingleTickerPr
         setState(() {
           _hasData = true;
         });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: MyText.bodyMedium("Initial Sync completed successfully!", color: contentTheme.onPrimary), backgroundColor: contentTheme.success),
-        );
+        Utils.showSuccessToast("Initial Sync completed successfully!", context: context);
       }
     } catch (e) {
       if (mounted) {

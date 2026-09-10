@@ -13,6 +13,7 @@ import 'package:ccpladmin/services/admin_pallet_service.dart';
 import 'package:flutter/material.dart';
 import 'package:ccpladmin/helpers/utils/pallet_pdf_helper.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:ccpladmin/helpers/widgets/app_dropdown.dart';
 
 class PalletStickeringScreen extends StatefulWidget {
   const PalletStickeringScreen({super.key});
@@ -390,28 +391,13 @@ class _PalletStickeringScreenState extends State<PalletStickeringScreen> with UI
       children: [
         MyText.labelMedium(label, fontWeight: 600),
         MySpacing.height(8),
-        Container(
-          padding: MySpacing.xy(16, 4),
-          decoration: BoxDecoration(
-            color: contentTheme.background,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: contentTheme.onBackground.withAlpha(20)),
-          ),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton<String>(
-              value: value,
-              isExpanded: true,
-              hint: MyText.bodyMedium("Select $label"),
-              items: items.map((String item) {
-                return DropdownMenuItem<String>(
-                  value: item,
-                  child: MyText.bodyMedium(item),
-                );
-              }).toList(),
-              onChanged: onChanged,
-              dropdownColor: contentTheme.background,
-            ),
-          ),
+        AppDropdown<String>(
+          value: value,
+          items: items,
+          hint: "Select $label",
+          height: 42,
+          isExpanded: true,
+          onChanged: (val) => onChanged(val),
         ),
       ],
     );

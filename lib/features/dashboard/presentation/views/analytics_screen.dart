@@ -10,8 +10,10 @@ import 'package:ccpladmin/helpers/widgets/my_flex_item.dart';
 import 'package:ccpladmin/helpers/widgets/my_progress_bar.dart';
 import 'package:ccpladmin/helpers/widgets/my_spacing.dart';
 import 'package:ccpladmin/helpers/widgets/my_text.dart';
+import 'package:ccpladmin/helpers/theme/theme_customizer.dart';
 import 'package:ccpladmin/view/layouts/layout.dart';
 import 'package:ccpladmin/features/dashboard/presentation/providers/dashboard_providers.dart';
+import 'package:ccpladmin/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
@@ -28,7 +30,27 @@ class _AnalyticsScreenState extends ConsumerState<AnalyticsScreen>
     with SingleTickerProviderStateMixin, UIMixin {
 
   @override
+  void initState() {
+    super.initState();
+    ThemeCustomizer.addListener(_onThemeChanged);
+  }
+
+  @override
+  void dispose() {
+    ThemeCustomizer.removeListener(_onThemeChanged);
+    super.dispose();
+  }
+
+  void _onThemeChanged(ThemeCustomizer oldVal, ThemeCustomizer newVal) {
+    if (oldVal.theme != newVal.theme ||
+        oldVal.currentLanguage.languageName != newVal.currentLanguage.languageName) {
+      if (mounted) setState(() {});
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    ref.watch(appNotifierProvider);
     final state = ref.watch(analyticsProvider);
     final notifier = ref.read(analyticsProvider.notifier);
 
@@ -55,7 +77,8 @@ class _AnalyticsScreenState extends ConsumerState<AnalyticsScreen>
                 ),
                 MyBreadcrumb(
                   children: [
-                    MyBreadcrumbItem(name: 'Analytics'),
+                    MyBreadcrumbItem(name: 'Dashboard'),
+                    MyBreadcrumbItem(name: 'Analytics', active: true),
                   ],
                 ),
               ],

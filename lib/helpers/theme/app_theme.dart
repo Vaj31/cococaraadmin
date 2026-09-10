@@ -39,7 +39,7 @@ class AppTheme {
   static ThemeData theme = AppTheme.getThemeFromThemeMode();
   static TextDirection textDirection = TextDirection.ltr;
 
-  static Color primaryColor = const Color(0xff059840);
+  static Color primaryColor = const Color(0xff30ae52);
 
   // static Color primaryColor = Color(0xe364523c);
 
@@ -75,10 +75,10 @@ class AppTheme {
 
     /// Colorscheme
     colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xff059840),
-      primary: const Color(0xff059840),
-      secondary: const Color(0xffF8FFF9),
-      tertiary: const Color(0xff2EAD52),
+      seedColor: const Color(0xff30ae52),
+      primary: const Color(0xff30ae52),
+      secondary: const Color(0xffeaf7ee),
+      tertiary: const Color(0xff268c42),
       brightness: Brightness.light,
     ),
 
@@ -158,7 +158,7 @@ class AppTheme {
     scaffoldBackgroundColor: Color(0xff262729),
     canvasColor: Colors.transparent,
 
-    primaryColor: const Color(0xff059840),
+    primaryColor: const Color(0xff35c75d),
     // primaryColor: Color(0xff6c563a),
 
     /// AppBar Theme
@@ -170,10 +170,10 @@ class AppTheme {
 
     /// Colorscheme
     colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xff059840),
-      primary: const Color(0xff059840),
-      secondary: const Color(0xffF8FFF9),
-      tertiary: const Color(0xff2EAD52),
+      seedColor: const Color(0xff35c75d),
+      primary: const Color(0xff35c75d),
+      secondary: const Color(0xff132b1b),
+      tertiary: const Color(0xff45d46d),
       surface: Color(0xff262729),
       onSurface: Color(0xFFD7D7D7),
       brightness: Brightness.dark,

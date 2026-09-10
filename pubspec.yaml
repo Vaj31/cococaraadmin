@@ -132,18 +132,6 @@ flutter:
     - assets/images/dummy/
     - assets/images/brand/
     - assets/data/
-    - assets/images/products/
-    - assets/images/products/bag/
-    - assets/images/products/black_shoes/
-    - assets/images/products/camera/
-    - assets/images/products/face_cream/
-    - assets/images/products/girl_sandal/
-    - assets/images/products/headphone/
-    - assets/images/products/laptop/
-    - assets/images/products/perfume/
-    - assets/images/products/smart_watch/
-    - assets/images/products/watch/
-    - assets/images/food/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -25,8 +25,8 @@ import 'package:ccpladmin/features/po/presentation/views/create_pallet_screen.da
 import 'package:ccpladmin/features/masters/presentation/views/pallet_list_screen.dart';
 import 'package:ccpladmin/features/po/presentation/views/pallet_stickering_screen.dart';
 import 'package:ccpladmin/features/production_report/presentation/views/production_report_screen.dart';
-import 'package:ccpladmin/features/downloads/presentation/views/upload_doc_screen.dart';
-import 'package:ccpladmin/features/downloads/presentation/views/download_doc_screen.dart';
+import 'package:ccpladmin/features/assets/presentation/views/asset_library_screen.dart';
+import 'package:ccpladmin/features/user_management/presentation/views/user_management_screen.dart';
 
 class AuthMiddleware extends GetMiddleware {
   @override
@@ -107,13 +107,13 @@ List<GetPage> getPageRoute() {
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      name: '/downloads/upload_doc',
-      page: () => const UploadDocScreen(),
+      name: '/assets/asset_library',
+      page: () => const AssetLibraryScreen(),
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      name: '/downloads/download_doc',
-      page: () => const DownloadDocScreen(),
+      name: '/administration/user_management',
+      page: () => const UserManagementScreen(),
       middlewares: [AuthMiddleware()],
     ),
   ];

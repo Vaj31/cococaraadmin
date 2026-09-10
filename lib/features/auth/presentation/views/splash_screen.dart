@@ -80,7 +80,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                   errorBuilder: (context, error, stackTrace) => const Icon(
                     Icons.business,
                     size: 80,
-                    color: Color(0xff059840),
+                    color: Color(0xff30ae52),
                   ),
                 ),
               ),
@@ -92,7 +92,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                     width: 260,
                     height: 8,
                     decoration: BoxDecoration(
-                      color: const Color(0xff059840).withAlpha(30),
+                      color: const Color(0xff30ae52).withAlpha(30),
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Stack(
@@ -105,15 +105,15 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                               borderRadius: BorderRadius.circular(4),
                               gradient: const LinearGradient(
                                 colors: [
-                                  Color(0xff2EAD52),
-                                  Color(0xff059840),
+                                  Color(0xff30ae52),
+                                  Color(0xff268c42),
                                 ],
                                 begin: Alignment.centerLeft,
                                 end: Alignment.centerRight,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: const Color(0xff059840).withAlpha(76),
+                                  color: const Color(0xff30ae52).withAlpha(76),
                                   blurRadius: 6,
                                   offset: const Offset(0, 2),
                                 ),

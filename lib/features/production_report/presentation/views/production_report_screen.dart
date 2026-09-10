@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:ccpladmin/services/supplier_service.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:ccpladmin/helpers/widgets/app_dropdown.dart';
 
 class ProductionReportScreen extends StatefulWidget {
   const ProductionReportScreen({super.key});
@@ -325,7 +326,7 @@ class _ProductionReportScreenState extends State<ProductionReportScreen>
                                   MyText.bodyMedium(
                                     _selectedDate == null
                                         ? 'Select Date'
-                                        : DateFormat('yyyy-MM-dd').format(_selectedDate!),
+                                        : DateFormat('dd/MM/yyyy').format(_selectedDate!),
                                     color: contentTheme.primary,
                                   ),
                                 ],
@@ -381,7 +382,7 @@ class _ProductionReportScreenState extends State<ProductionReportScreen>
                                       MyText.bodyMedium(
                                         _fromDate == null
                                             ? 'From Date'
-                                            : DateFormat('yyyy-MM-dd').format(_fromDate!),
+                                            : DateFormat('dd/MM/yyyy').format(_fromDate!),
                                         color: contentTheme.primary,
                                       ),
                                     ],
@@ -398,7 +399,7 @@ class _ProductionReportScreenState extends State<ProductionReportScreen>
                                       MyText.bodyMedium(
                                         _toDate == null
                                             ? 'To Date'
-                                            : DateFormat('yyyy-MM-dd').format(_toDate!),
+                                            : DateFormat('dd/MM/yyyy').format(_toDate!),
                                         color: contentTheme.primary,
                                       ),
                                     ],
@@ -448,35 +449,35 @@ class _ProductionReportScreenState extends State<ProductionReportScreen>
                                     children: [
                                       // MyText.labelMedium("Supplier", fontWeight: 600),
                                       // MySpacing.height(8),
-                                      Container(
-                                        width: 300,
-                                        padding: MySpacing.xy(16, 4),
-                                        decoration: BoxDecoration(
-                                          color: contentTheme.background,
-                                          borderRadius: BorderRadius.circular(8),
-                                          border: Border.all(color: contentTheme.onBackground.withValues(alpha: 20 / 255)),
-                                        ),
-                                        child: DropdownButtonHideUnderline(
-                                          child: DropdownButton<String>(
+                                      Builder(
+                                        builder: (context) {
+                                          final validSuppliers = _suppliers.where((s) {
+                                            final id = s['supplierId']?.toString() ?? s['supplier_id']?.toString() ?? s['id']?.toString() ?? '';
+                                            return id.isNotEmpty;
+                                          }).toList();
+                                          final supplierIds = validSuppliers.map((s) => s['supplierId']?.toString() ?? s['supplier_id']?.toString() ?? s['id']?.toString() ?? '').toList();
+
+                                          return AppDropdown<String>(
                                             value: _selectedSupplierId,
-                                            isExpanded: true,
-                                            hint: MyText.bodyMedium("Select Supplier"),
-                                            items: _suppliers.map((Map<String, dynamic> supplier) {
-                                              String supId = supplier['supplierId']?.toString() ?? supplier['supplier_id']?.toString() ?? supplier['id']?.toString() ?? '';
-                                              String supName = supplier['supplierName']?.toString() ?? supplier['supplier_name']?.toString() ?? supplier['name']?.toString() ?? 'Unnamed Supplier';
-                                              return DropdownMenuItem<String>(
-                                                value: supId.isNotEmpty ? supId : null,
-                                                child: MyText.bodyMedium(supId.isNotEmpty ? '$supId - $supName'.toUpperCase() : supName.toUpperCase()),
+                                            items: supplierIds,
+                                            hint: "Select Supplier",
+                                            width: 300,
+                                            height: 42,
+                                            itemLabel: (supId) {
+                                              final s = validSuppliers.firstWhere(
+                                                (item) => (item['supplierId']?.toString() ?? item['supplier_id']?.toString() ?? item['id']?.toString()) == supId,
+                                                orElse: () => {'name': supId},
                                               );
-                                            }).toList(),
-                                            onChanged: (String? newValue) {
+                                              final name = s['supplierName']?.toString() ?? s['supplier_name']?.toString() ?? s['name']?.toString() ?? 'Unnamed Supplier';
+                                              return '$supId - $name'.toUpperCase();
+                                            },
+                                            onChanged: (val) {
                                               setState(() {
-                                                _selectedSupplierId = newValue;
+                                                _selectedSupplierId = val;
                                               });
                                             },
-                                            dropdownColor: contentTheme.background,
-                                          ),
-                                        ),
+                                          );
+                                        },
                                       ),
                                     ],
                                   ),

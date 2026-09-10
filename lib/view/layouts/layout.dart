@@ -1,7 +1,6 @@
 import 'package:ccpladmin/controller/layout/layout_controller.dart';
 import 'package:ccpladmin/helpers/services/localizations/language.dart';
 import 'package:ccpladmin/helpers/theme/admin_theme.dart';
-import 'package:ccpladmin/helpers/theme/app_notifier.dart';
 import 'package:ccpladmin/helpers/theme/app_theme.dart';
 import 'package:ccpladmin/helpers/theme/theme_customizer.dart';
 import 'package:ccpladmin/helpers/widgets/my_button.dart';
@@ -34,9 +33,9 @@ class Layout extends StatefulWidget {
 class _LayoutState extends State<Layout> {
   final LayoutController controller = LayoutController();
 
-  final topBarTheme = AdminTheme.theme.topBarTheme;
+  TopBarTheme get topBarTheme => AdminTheme.theme.topBarTheme;
 
-  final contentTheme = AdminTheme.theme.contentTheme;
+  ContentTheme get contentTheme => AdminTheme.theme.contentTheme;
 
   Function? languageHideFn;
 
@@ -58,6 +57,7 @@ class _LayoutState extends State<Layout> {
   Widget mobileScreen() {
     return Scaffold(
       key: controller.scaffoldKey,
+      backgroundColor: AdminTheme.theme.contentTheme.background,
       appBar: AppBar(
         elevation: 0,
         actions: [
@@ -135,7 +135,10 @@ class _LayoutState extends State<Layout> {
       drawer: LeftBar(),
       body: SingleChildScrollView(
         key: controller.scrollKey,
-        child: widget.child,
+        child: KeyedSubtree(
+          key: ValueKey(ThemeCustomizer.instance.theme),
+          child: widget.child ?? const SizedBox(),
+        ),
       ),
     );
   }
@@ -143,32 +146,41 @@ class _LayoutState extends State<Layout> {
   Widget largeScreen() {
     return Scaffold(
       key: controller.scaffoldKey,
+      backgroundColor: AdminTheme.theme.contentTheme.background,
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButton:
           BackToTop(scrollController: controller.scrollController),
       endDrawer: RightBar(),
       body: Row(
         children: [
-          LeftBar(isCondensed: ThemeCustomizer.instance.leftBarCondensed),
+          RepaintBoundary(
+            child: LeftBar(isCondensed: ThemeCustomizer.instance.leftBarCondensed),
+          ),
           Expanded(
+            child: RepaintBoundary(
               child: Stack(
-            children: [
-              Positioned(
-                top: 0,
-                right: 0,
-                left: 0,
-                bottom: 0,
-                child: SingleChildScrollView(
-                  controller: controller.scrollController,
-                  padding:
-                      MySpacing.fromLTRB(0, 58 + flexSpacing, 0, flexSpacing),
-                  key: controller.scrollKey,
-                  child: widget.child,
-                ),
+                children: [
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    left: 0,
+                    bottom: 0,
+                    child: SingleChildScrollView(
+                      controller: controller.scrollController,
+                      padding:
+                          MySpacing.fromLTRB(0, 58 + flexSpacing, 0, flexSpacing),
+                      key: controller.scrollKey,
+                      child: KeyedSubtree(
+                        key: ValueKey(ThemeCustomizer.instance.theme),
+                        child: widget.child ?? const SizedBox(),
+                      ),
+                    ),
+                  ),
+                  Positioned(top: 0, left: 0, right: 0, child: TopBar()),
+                ],
               ),
-              Positioned(top: 0, left: 0, right: 0, child: TopBar()),
-            ],
-          )),
+            ),
+          ),
         ],
       ),
     );

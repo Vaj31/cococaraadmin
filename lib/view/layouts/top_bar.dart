@@ -1,11 +1,8 @@
 import 'package:ccpladmin/helpers/services/localizations/language.dart';
-import 'package:ccpladmin/helpers/theme/app_notifier.dart';
 import 'package:ccpladmin/helpers/theme/app_theme.dart';
 import 'package:ccpladmin/helpers/theme/theme_customizer.dart';
 import 'package:ccpladmin/helpers/utils/mixins/ui_mixin.dart';
-import 'package:ccpladmin/helpers/utils/my_shadow.dart';
 import 'package:ccpladmin/helpers/widgets/my_button.dart';
-import 'package:ccpladmin/helpers/widgets/my_card.dart';
 import 'package:ccpladmin/helpers/widgets/my_container.dart';
 import 'package:ccpladmin/helpers/widgets/my_spacing.dart';
 import 'package:ccpladmin/helpers/widgets/my_text.dart';
@@ -19,7 +16,8 @@ import 'package:get/get.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ccpladmin/main.dart';
-import 'package:universal_html/html.dart';
+import 'package:ccpladmin/view/layouts/my_todo_drawer.dart';
+import 'package:universal_html/html.dart' hide VoidCallback;
 
 class TopBar extends StatefulWidget {
   const TopBar({
@@ -56,116 +54,428 @@ class _TopBarState extends State<TopBar>
     setState(() {});
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return MyCard(
-      shadow: MyShadow(position: MyShadowPosition.bottomRight, elevation: 0.5),
-      height: 60,
-      borderRadiusAll: 0,
-      padding: MySpacing.x(24),
-      color: topBarTheme.background.withAlpha(246),
-      child: Row(
+  Widget _buildSquareButton({
+    required Widget child,
+    required VoidCallback onTap,
+    String? tooltip,
+    Color? borderColorOverride,
+    Color? bgOverride,
+  }) {
+    final isDark = ThemeCustomizer.instance.theme == ThemeMode.dark;
+    final border = borderColorOverride ??
+        (isDark
+            ? const Color(0xFF1F4D2E)
+            : const Color(0xFFB7E4C4).withValues(alpha: 0.8));
+    final bg = bgOverride ??
+        (isDark
+            ? const Color(0xFF132B1B).withValues(alpha: 0.4)
+            : Colors.white);
+
+    Widget button = InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(8),
+      hoverColor: isDark
+          ? const Color(0xFF1A3B25)
+          : const Color(0xFFEAF7EE),
+      child: Container(
+        width: 36,
+        height: 36,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: bg,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: border, width: 1),
+        ),
+        child: child,
+      ),
+    );
+
+    if (tooltip != null) {
+      return Tooltip(message: tooltip, child: button);
+    }
+    return button;
+  }
+
+  Widget buildMessages() {
+    Widget messageItem(
+        String avatar, String name, String preview, String time) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: 16,
+              backgroundImage: AssetImage(avatar),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(name,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w600, fontSize: 13)),
+                  Text(preview,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 12, color: Colors.grey[600])),
+                ],
+              ),
+            ),
+            const SizedBox(width: 8),
+            Text(time,
+                style: TextStyle(fontSize: 10.5, color: Colors.grey[500])),
+          ],
+        ),
+      );
+    }
+
+    return MyContainer(
+      paddingAll: 0,
+      borderRadiusAll: 8,
+      width: 280,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InkWell(
-              splashColor: colorScheme.onSurface,
-              highlightColor: colorScheme.onSurface,
-              onTap: () => leftBarCondensedToggle(),
-              child: Icon(
-                !isLeftBarCondensed ? Icons.menu : Icons.arrow_forward_outlined,
-                color: topBarTheme.onBackground,
-              )),
-          Expanded(
+          Padding(
+            padding: const EdgeInsets.fromLTRB(14, 12, 14, 6),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InkWell(
-                    onTap: () => searchModal(context),
-                    child: Icon(LucideIcons.search, size: 20)),
-                MySpacing.width(24),
-                CustomPopupMenu(
-                  backdrop: true,
-                  hideFn: (hide) => languageHideFn = hide,
-                  onChange: (_) {},
-                  offsetX: -36,
-                  offsetY: 20,
-                  menu: MyContainer(
-                      paddingAll: 0,
-                      borderRadiusAll: 4,
-                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                      child: SvgPicture.asset(
-                          'assets/lang/${ThemeCustomizer.instance.currentLanguage.locale.languageCode}.svg',
-                          clipBehavior: Clip.antiAliasWithSaveLayer,
-                          height: 18)),
-                  menuBuilder: (_) => buildLanguageSelector(),
-                ),
-                MySpacing.width(24),
-                CustomPopupMenu(
-                    backdrop: true,
-                    onChange: (_) {},
-                    offsetX: -120,
-                    offsetY: 21,
-                    menu: Icon(LucideIcons.bell, size: 20),
-                    menuBuilder: (_) => buildNotifications()),
-                MySpacing.width(24),
-                InkWell(
-                    onTap: goFullScreen,
-                    child: Icon(
-                        isFullScreen
-                            ? LucideIcons.minimize
-                            : LucideIcons.maximize,
-                        size: 20)),
-                MySpacing.width(24),
-                InkWell(
-                  onTap: () {
-                    ThemeCustomizer.setTheme(
-                        ThemeCustomizer.instance.theme == ThemeMode.dark
-                            ? ThemeMode.light
-                            : ThemeMode.dark);
-                  },
-                  child: Icon(
-                      ThemeCustomizer.instance.theme == ThemeMode.dark
-                          ? LucideIcons.sun
-                          : LucideIcons.moon,
-                      size: 20,
-                      color: topBarTheme.onBackground),
-                ),
-                MySpacing.width(24),
-                CustomPopupMenu(
-                  backdrop: true,
-                  onChange: (_) {},
-                  offsetX: -20,
-                  offsetY: 0,
-                  menu: Padding(
-                    padding: MySpacing.xy(8, 8),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        MyContainer.rounded(
-                            paddingAll: 0,
-                            child: Image.asset(
-                              Images.avatars[1],
-                              height: 28,
-                              width: 28,
-                              fit: BoxFit.cover,
-                            )),
-                        MySpacing.width(8),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            MyText.labelLarge("Tylor", fontWeight: 600),
-                            MyText.labelSmall("Web Designer", fontWeight: 600),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  menuBuilder: (_) => buildAccountMenu(),
-                  hideFn: (hide) => languageHideFn = hide,
-                ),
+                const Text("Messages",
+                    style:
+                        TextStyle(fontWeight: FontWeight.w700, fontSize: 14)),
+                Text("Mark all read",
+                    style: TextStyle(
+                        fontSize: 11, color: contentTheme.primary)),
               ],
             ),
-          )
+          ),
+          const Divider(height: 1),
+          messageItem(Images.avatars[0], "Support Team",
+              "Ticket #4092 resolved", "5m ago"),
+          messageItem(Images.avatars[1], "Logistics Admin",
+              "Supplier dispatch confirmed", "1h ago"),
+          messageItem(Images.avatars[2], "Finance Desk",
+              "Payment verification pending", "3h ago"),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = ThemeCustomizer.instance.theme == ThemeMode.dark;
+    final borderColor = isDark
+        ? const Color(0xFF1F4D2E)
+        : const Color(0xFFB7E4C4).withValues(alpha: 0.8);
+
+    return Container(
+      height: 62,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      decoration: BoxDecoration(
+        color: topBarTheme.background,
+        border: Border(
+          bottom: BorderSide(
+            color: isDark
+                ? const Color(0xFF1F4D2E)
+                : const Color(0xFFB7E4C4).withValues(alpha: 0.6),
+            width: 1,
+          ),
+        ),
+      ),
+      child: Row(
+        children: [
+          // Left: Menu Icon
+          InkWell(
+            splashColor: colorScheme.onSurface,
+            highlightColor: colorScheme.onSurface,
+            hoverColor: isDark
+                ? const Color(0xFF1A3B25)
+                : const Color(0xFFEAF7EE),
+            onTap: () => leftBarCondensedToggle(),
+            borderRadius: BorderRadius.circular(6),
+            child: Padding(
+              padding: const EdgeInsets.all(6),
+              child: Icon(
+                LucideIcons.menu,
+                size: 20,
+                color: isDark
+                    ? const Color(0xFF35C75D)
+                    : const Color(0xFF22783A),
+              ),
+            ),
+          ),
+          const SizedBox(width: 16),
+
+          // Middle Controls & Search
+          _buildSquareButton(
+            tooltip: "Refresh",
+            onTap: () {
+              setState(() {});
+            },
+            child: Icon(
+              LucideIcons.rotate_cw,
+              size: 16,
+              color: topBarTheme.onBackground.withValues(alpha: 0.85),
+            ),
+          ),
+          const SizedBox(width: 8),
+          _buildSquareButton(
+            tooltip: "My To-Do",
+            onTap: () => MyTodoDrawer.show(context),
+            child: Icon(
+              LucideIcons.sliders_horizontal,
+              size: 16,
+              color: topBarTheme.onBackground.withValues(alpha: 0.85),
+            ),
+          ),
+          const SizedBox(width: 12),
+          // Search Box
+          InkWell(
+            onTap: () => searchModal(context),
+            borderRadius: BorderRadius.circular(8),
+            child: Container(
+              height: 36,
+              width: 210,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.04)
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: borderColor, width: 1),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    LucideIcons.search,
+                    size: 14,
+                    color: isDark
+                        ? const Color(0xFF7DE69A)
+                        : const Color(0xFF22783A),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      "Search...",
+                      style: TextStyle(
+                        fontSize: 12.5,
+                        color: isDark
+                            ? Colors.grey[400]
+                            : const Color(0xFF94A3B8),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 5, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? const Color(0xFF132B1B)
+                          : const Color(0xFFEAF7EE),
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(
+                        color: isDark
+                            ? const Color(0xFF1F4D2E)
+                            : const Color(0xFFB7E4C4),
+                        width: 0.8,
+                      ),
+                    ),
+                    child: Text(
+                      "⌘ K",
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w600,
+                        color: isDark
+                            ? const Color(0xFF7DE69A)
+                            : const Color(0xFF22783A),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          const Spacer(),
+
+          // Right Actions
+          // Language Selector
+          CustomPopupMenu(
+            backdrop: true,
+            hideFn: (hide) => languageHideFn = hide,
+            onChange: (_) {},
+            offsetX: -36,
+            offsetY: 20,
+            menu: Tooltip(
+              message: "Change Language",
+              child: Container(
+                width: 36,
+                height: 36,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: borderColor, width: 1),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(3),
+                  child: SvgPicture.asset(
+                    'assets/lang/${ThemeCustomizer.instance.currentLanguage.locale.languageCode}.svg',
+                    width: 19,
+                    height: 14,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            menuBuilder: (_) => buildLanguageSelector(),
+          ),
+          const SizedBox(width: 8),
+
+          // Full Screen Toggle
+          _buildSquareButton(
+            tooltip: isFullScreen ? "Exit Fullscreen" : "Fullscreen",
+            onTap: goFullScreen,
+            child: Icon(
+              isFullScreen ? LucideIcons.minimize : LucideIcons.maximize,
+              size: 16,
+              color: topBarTheme.onBackground.withValues(alpha: 0.85),
+            ),
+          ),
+          const SizedBox(width: 8),
+
+          // Dark Mode Toggle
+          _buildSquareButton(
+            tooltip: isDark ? "Light Mode" : "Dark Mode",
+            onTap: () {
+              ThemeCustomizer.setTheme(
+                isDark ? ThemeMode.light : ThemeMode.dark,
+              );
+            },
+            child: Icon(
+              isDark ? LucideIcons.sun : LucideIcons.moon,
+              size: 16,
+              color: topBarTheme.onBackground.withValues(alpha: 0.85),
+            ),
+          ),
+          const SizedBox(width: 8),
+
+          // Notifications
+          CustomPopupMenu(
+            backdrop: true,
+            onChange: (_) {},
+            offsetX: -120,
+            offsetY: 21,
+            menu: Tooltip(
+              message: "Notifications",
+              child: Container(
+                width: 36,
+                height: 36,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: borderColor, width: 1),
+                ),
+                child: Icon(
+                  LucideIcons.bell,
+                  size: 16,
+                  color: topBarTheme.onBackground.withValues(alpha: 0.85),
+                ),
+              ),
+            ),
+            menuBuilder: (_) => buildNotifications(),
+          ),
+          const SizedBox(width: 8),
+
+          // Messages
+          CustomPopupMenu(
+            backdrop: true,
+            onChange: (_) {},
+            offsetX: -120,
+            offsetY: 21,
+            menu: Tooltip(
+              message: "Messages",
+              child: Container(
+                width: 36,
+                height: 36,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: borderColor, width: 1),
+                ),
+                child: Icon(
+                  LucideIcons.message_square,
+                  size: 16,
+                  color: topBarTheme.onBackground.withValues(alpha: 0.85),
+                ),
+              ),
+            ),
+            menuBuilder: (_) => buildMessages(),
+          ),
+          const SizedBox(width: 14),
+
+          // User Profile
+          CustomPopupMenu(
+            backdrop: true,
+            onChange: (_) {},
+            offsetX: -20,
+            offsetY: 10,
+            hideFn: (hide) => languageHideFn = hide,
+            menu: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      width: 34,
+                      height: 34,
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? const Color(0xFF35C75D)
+                            : const Color(0xFF30AE52),
+                        shape: BoxShape.circle,
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "B",
+                        style: TextStyle(
+                          color: isDark
+                              ? const Color(0xFF0A1B10)
+                              : Colors.white,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      "Barathvaj T",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 13.5,
+                        color: topBarTheme.onBackground,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            menuBuilder: (_) => buildAccountMenu(),
+          ),
         ],
       ),
     );

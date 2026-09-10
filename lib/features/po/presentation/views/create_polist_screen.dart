@@ -1912,26 +1912,60 @@ class __EditableDropdownState extends State<_EditableDropdown> with UIMixin {
               return Align(
                 alignment: Alignment.topLeft,
                 child: Material(
-                  elevation: 4.0,
-                  borderRadius: BorderRadius.circular(8),
-                  color: contentTheme.background,
+                  elevation: 6.0,
+                  shadowColor: Colors.black.withAlpha(50),
+                  color: contentTheme.cardBackground,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: BorderSide(
+                      color: contentTheme.onBackground.withAlpha(20),
+                    ),
+                  ),
                   clipBehavior: Clip.antiAlias,
                   child: ConstrainedBox(
                     constraints: BoxConstraints(
-                        maxHeight: 200, maxWidth: constraints.maxWidth),
+                        maxHeight: 220, maxWidth: constraints.maxWidth),
                     child: ListView.builder(
-                      padding: EdgeInsets.zero,
+                      padding: const EdgeInsets.symmetric(vertical: 4),
                       shrinkWrap: true,
                       itemCount: options.length,
                       itemBuilder: (BuildContext context, int index) {
                         final String option = options.elementAt(index);
+                        final isSelected = option.toLowerCase() == _controller.text.trim().toLowerCase();
                         return InkWell(
-                          onTap: () {
-                            onSelected(option);
-                          },
-                          child: Padding(
-                            padding: MySpacing.xy(16, 12),
-                            child: MyText.bodyMedium(option, fontWeight: 600),
+                          onTap: () => onSelected(option),
+                          child: Container(
+                            width: double.infinity,
+                            margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                            decoration: BoxDecoration(
+                              color: isSelected ? contentTheme.primary : Colors.transparent,
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    option,
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+                                      color: isSelected ? Colors.white : contentTheme.onBackground,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                if (isSelected) ...[
+                                  const SizedBox(width: 8),
+                                  const Icon(
+                                    LucideIcons.check,
+                                    size: 16,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ],
+                            ),
                           ),
                         );
                       },

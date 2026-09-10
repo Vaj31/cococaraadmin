@@ -10,6 +10,7 @@ import 'package:ccpladmin/helpers/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ccpladmin/main.dart';
+import 'package:get/get.dart';
 
 typedef ThemeChangeCallback = void Function(
     ThemeCustomizer oldVal, ThemeCustomizer newVal);
@@ -64,7 +65,14 @@ class ThemeCustomizer {
 
   static void _notify() {
     AdminTheme.setTheme();
+    AppTheme.theme = AppTheme.getThemeFromThemeMode();
     AppStyle.changeMyTheme();
+    try {
+      Get.changeThemeMode(instance.theme);
+      Get.changeTheme(AppTheme.theme);
+    } catch (e) {
+      debugPrint("Failed to update GetX theme: $e");
+    }
     if (NavigationService.globalContext != null) {
       try {
         ProviderScope.containerOf(NavigationService.globalContext!)
@@ -91,6 +99,7 @@ class ThemeCustomizer {
     instance.leftBarTheme = theme;
     instance.rightBarTheme = theme;
     instance.topBarTheme = theme;
+    AppTheme.theme = AppTheme.getThemeFromThemeMode();
     _notify();
   }
 

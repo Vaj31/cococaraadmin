@@ -12,6 +12,7 @@ import 'package:ccpladmin/helpers/widgets/my_flex.dart';
 import 'package:ccpladmin/helpers/widgets/my_flex_item.dart';
 import 'package:ccpladmin/view/layouts/layout.dart';
 import 'package:flutter/material.dart';
+import 'package:ccpladmin/helpers/widgets/app_dropdown.dart';
 import 'package:ccpladmin/features/po/presentation/views/cococara_create_pallet_screen.dart';
 import 'package:ccpladmin/services/create_pallet_service.dart';
 
@@ -286,28 +287,13 @@ class _CreatePalletScreenState extends State<CreatePalletScreen> with UIMixin {
       children: [
         MyText.labelMedium(label, fontWeight: 600),
         MySpacing.height(8),
-        Container(
-          padding: MySpacing.xy(16, 4),
-          decoration: BoxDecoration(
-            color: contentTheme.background,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: contentTheme.onBackground.withValues(alpha: 20 / 255)),
-          ),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton<String>(
-              value: value,
-              isExpanded: true,
-              hint: MyText.bodyMedium("Select $label"),
-              items: items.map((String item) {
-                return DropdownMenuItem<String>(
-                  value: item,
-                  child: MyText.bodyMedium(item),
-                );
-              }).toList(),
-              onChanged: onChanged,
-              dropdownColor: contentTheme.background,
-            ),
-          ),
+        AppDropdown<String>(
+          value: value,
+          items: items,
+          hint: "Select $label",
+          height: 42,
+          isExpanded: true,
+          onChanged: (val) => onChanged(val),
         ),
       ],
     );

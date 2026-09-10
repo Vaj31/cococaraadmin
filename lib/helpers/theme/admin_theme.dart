@@ -34,13 +34,17 @@ class LeftBarTheme {
   final Color background, onBackground;
   final Color labelColor;
   final Color activeItemColor, activeItemBackground;
+  final Color surfaceHover;
+  final Color indicatorColor;
 
   LeftBarTheme({
     this.background = const Color(0xffffffff),
-    this.onBackground = const Color(0xff1e293b),
-    this.labelColor = const Color(0xff64748b),
-    this.activeItemColor = const Color(0xff059840),
-    this.activeItemBackground = const Color(0xffF8FFF9),
+    this.onBackground = const Color(0xff6b7280),
+    this.labelColor = const Color(0xff9ca3af),
+    this.activeItemColor = const Color(0xff22783a),
+    this.activeItemBackground = const Color(0xffeaf7ee),
+    this.surfaceHover = const Color(0xffd5f0dc),
+    this.indicatorColor = const Color(0xff30ae52),
   });
 
   //--------------------------------------  Left Bar Theme ----------------------------------------//
@@ -48,11 +52,13 @@ class LeftBarTheme {
   static final LeftBarTheme lightLeftBarTheme = LeftBarTheme();
 
   static final LeftBarTheme darkLeftBarTheme = LeftBarTheme(
-      background: const Color(0xff0f172a),
-      onBackground: const Color(0xffe2e8f0),
-      labelColor: const Color(0xff94a3b8),
-      activeItemBackground: const Color(0xff1e3a8a),
-      activeItemColor: const Color(0xff60a5fa));
+      background: const Color(0xff121212),
+      onBackground: const Color(0xff94a3b8),
+      labelColor: const Color(0xff6b7280),
+      activeItemBackground: const Color(0xff132b1b),
+      activeItemColor: const Color(0xff35c75d),
+      surfaceHover: const Color(0xff1a3b25),
+      indicatorColor: const Color(0xff35c75d));
 
   static LeftBarTheme getThemeFromType(LeftBarThemeType leftBarThemeType) {
     switch (leftBarThemeType) {
@@ -67,18 +73,22 @@ class LeftBarTheme {
 class TopBarTheme {
   final Color background;
   final Color onBackground;
+  final Color borderColor;
 
   TopBarTheme({
     this.background = const Color(0xffffffff),
-    this.onBackground = const Color(0xff313a46),
+    this.onBackground = const Color(0xff111827),
+    this.borderColor = const Color(0xffb7e4c4),
   });
 
-  //--------------------------------------  Left Bar Theme ----------------------------------------//
+  //--------------------------------------  Top Bar Theme ----------------------------------------//
 
   static final TopBarTheme lightTopBarTheme = TopBarTheme();
 
   static final TopBarTheme darkTopBarTheme = TopBarTheme(
-      background: Color(0xff2c3036), onBackground: Color(0xffdcdcdc));
+      background: const Color(0xff18181b),
+      onBackground: const Color(0xfff3f4f6),
+      borderColor: const Color(0xff1f4d2e));
 }
 
 class RightBarTheme {
@@ -147,16 +157,22 @@ class ContentTheme {
     };
   }
 
+  final Color primaryHover, surfaceHover, borderStroke, textAccent;
+
   ContentTheme({
     this.background = const Color(0xfff8fafc),
     this.onBackground = const Color(0xff1e293b),
-    this.primary = const Color(0xff059840),
+    this.primary = const Color(0xff30ae52),
     this.onPrimary = const Color(0xffffffff),
+    this.primaryHover = const Color(0xff268c42),
+    this.surfaceHover = const Color(0xffd5f0dc),
+    this.borderStroke = const Color(0xffb7e4c4),
+    this.textAccent = const Color(0xff22783a),
     this.disabled = const Color(0xffffffff),
     this.onDisabled = const Color(0xffffffff),
-    this.secondary = const Color(0xffF8FFF9),
-    this.onSecondary = const Color(0xff059840),
-    this.success = const Color(0xff10b981),
+    this.secondary = const Color(0xffeaf7ee),
+    this.onSecondary = const Color(0xff22783a),
+    this.success = const Color(0xff30ae52),
     this.onSuccess = const Color(0xffffffff),
     this.danger = const Color(0xfff43f5e),
     this.onDanger = const Color(0xffffffff),
@@ -169,37 +185,53 @@ class ContentTheme {
     this.dark = const Color(0xff0f172a),
     this.onDark = const Color(0xffffffff),
     this.cardBackground = const Color(0xffffffff),
-    this.cardShadow = const Color(0xffffffff),
-    this.cardBorder = const Color(0xffffffff),
+    this.cardShadow = const Color(0xffcbd5e1),
+    this.cardBorder = const Color(0xffb7e4c4),
     this.cardText = const Color(0xff64748b),
-    this.cardTextMuted = const Color(0xff94a3b8),
-    this.title = const Color(0xff475569),
+    this.cardTextMuted = const Color(0xff9ca3af),
+    this.title = const Color(0xff1e293b),
   });
 
-  //--------------------------------------  Left Bar Theme ----------------------------------------//
+  //--------------------------------------  Content Theme ----------------------------------------//
 
   static final ContentTheme lightContentTheme = ContentTheme(
     background: const Color(0xfff8fafc),
     onBackground: const Color(0xff1e293b),
-    cardBorder: const Color(0xffe2e8f0),
+    primary: const Color(0xff30ae52),
+    onPrimary: const Color(0xffffffff),
+    primaryHover: const Color(0xff268c42),
+    surfaceHover: const Color(0xffd5f0dc),
+    borderStroke: const Color(0xffb7e4c4),
+    textAccent: const Color(0xff22783a),
+    secondary: const Color(0xffeaf7ee),
+    onSecondary: const Color(0xff22783a),
+    cardBorder: const Color(0xffb7e4c4),
     cardBackground: const Color(0xffffffff),
     cardShadow: const Color(0xffcbd5e1),
     cardText: const Color(0xff64748b),
-    title: const Color(0xff475569),
-    cardTextMuted: const Color(0xff94a3b8),
+    title: const Color(0xff1e293b),
+    cardTextMuted: const Color(0xff9ca3af),
   );
 
   static final ContentTheme darkContentTheme = ContentTheme(
-    background: const Color(0xff0f172a),
+    background: const Color(0xff121212),
     onBackground: const Color(0xfff8fafc),
+    primary: const Color(0xff35c75d),
+    onPrimary: const Color(0xff0a1b10),
+    primaryHover: const Color(0xff45d46d),
+    surfaceHover: const Color(0xff1a3b25),
+    borderStroke: const Color(0xff1f4d2e),
+    textAccent: const Color(0xff7de69a),
+    secondary: const Color(0xff132b1b),
+    onSecondary: const Color(0xff7de69a),
     disabled: const Color(0xff334155),
     onDisabled: const Color(0xff475569),
-    cardBorder: const Color(0xff334155),
-    cardBackground: const Color(0xff1e293b),
+    cardBorder: const Color(0xff1f4d2e),
+    cardBackground: const Color(0xff1e1e1e),
     cardShadow: const Color(0xff020617),
-    cardText: const Color(0xff94a3b8),
-    title: const Color(0xffcbd5e1),
-    cardTextMuted: const Color(0xff64748b),
+    cardText: const Color(0xff9ca3af),
+    title: const Color(0xfff8fafc),
+    cardTextMuted: const Color(0xff6b7280),
   );
 }
 

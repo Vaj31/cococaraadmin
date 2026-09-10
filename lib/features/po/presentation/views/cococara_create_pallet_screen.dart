@@ -135,18 +135,12 @@ class _CococaraCreatePalletScreenState extends State<CococaraCreatePalletScreen>
 
       if (mounted) {
         if (successCount > 0) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("Pallet created successfully")),
-          );
+          Utils.showSuccessToast("Pallet created successfully", context: context);
           Get.to(() => const PalletListScreen());
         } else if (errorCount > 0) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("Generated $successCount pallets, failed $errorCount.")),
-          );
+          Utils.showErrorToast("Generated $successCount pallets, failed $errorCount.", context: context);
         } else {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("No new pallets to generate.")),
-          );
+          Utils.showInfoToast("No new pallets to generate.", context: context);
         }
       }
     } catch (e) {
